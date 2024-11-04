@@ -29,8 +29,11 @@ class ClashRoyaleClanRRLog:
         '''
         Returns the API key's content
         '''
-        with open(self.API_KEY_PATH, "r") as inp:
-            key = inp.read()
+        try:
+            with open(self.API_KEY_PATH, "r") as inp:
+                key = inp.read()
+        except FileNotFoundError:
+            return ""
         return key
 
     def fetch_clan_riverracelog(self):
