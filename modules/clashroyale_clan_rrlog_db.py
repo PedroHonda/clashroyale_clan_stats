@@ -72,6 +72,7 @@ class ClashRoyaleClanRRLogDB:
         Returns:
         list: A list containing all the clans from the database.
         '''
-        client = pymongo.MongoClient('mongodb://localhost:27017/')
+        load_dotenv()
+        client = pymongo.MongoClient(os.getenv('MONGODB_CRS'))
         db = client['clashroyale_clan_stats']
         return db.list_collection_names()
