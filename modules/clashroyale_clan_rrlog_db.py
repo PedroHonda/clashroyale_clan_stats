@@ -1,7 +1,8 @@
 '''
 MongoDB class for storing clan stats in a MongoDB database
 '''
-
+import os
+from dotenv import load_dotenv
 import pymongo
 
 
@@ -13,8 +14,10 @@ class ClashRoyaleClanRRLogDB:
         '''
         Constructor for the ClashRoyaleClanRRLogDB class
         '''
+        load_dotenv()
         self.clan_tag = clan_tag.replace('#', '')
-        self.client = pymongo.MongoClient('mongodb://localhost:27017/')
+        # Change to MONGODB_LOCAL for local database
+        self.client = pymongo.MongoClient(os.getenv('MONGODB_CRS'))
         self.db = self.client["clashroyale_clan_stats"]
         self.collection = self.db[f"#{self.clan_tag}"]
 

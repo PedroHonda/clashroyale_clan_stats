@@ -3,4 +3,5 @@ clan_api_key
 *.csv
 *.xlsx
 *.json
+.env
 run.py
