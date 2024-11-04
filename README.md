@@ -18,6 +18,20 @@ To use this app, follow these steps:
 2. In the root directory of this app (where `app.py` is located), create a new file named `clan_api_key`.
 3. Paste the token into this file and save it.
 
+### 3. Install the Required Libraries
+
+To install the necessary libraries, run:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+### 4. Run Streamlit App
+
+To start the Streamlit application, execute:
+```bash
+streamlit run app.py
+```
 ---
 
 Your app should now be set up to access and display Clash Royale clan stats!
