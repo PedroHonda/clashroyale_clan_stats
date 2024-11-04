@@ -1,0 +1,6 @@
+clan_api_key
+*.pyc
+*.csv
+*.xlsx
+*.json
+run.py
