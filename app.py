@@ -4,7 +4,7 @@ import streamlit as st
 from modules.clashroyale_clan_rrlog import ClashRoyaleClanRRLog
 from modules.clashroyale_clan_rrlog_db import ClashRoyaleClanRRLogDB
 
-st.set_page_config(layout="wide")
+st.set_page_config(page_title="Clash Royale Clan Stats", layout="wide")
 
 st.title("Clash Royale Clan Stats")
 
@@ -28,7 +28,8 @@ if clan_id:
     if st.sidebar.button("Update", type="primary"):
         crs = ClashRoyaleClanRRLog(clan_id)
         crs.store_clan_riverracelog()
-        st.sidebar.write("Updated!")
+        get_clan_riverracelog.clear(clan_id)
+        st.rerun()
 
     fame = season_data[season_id]["fame"]
     decks = season_data[season_id]["decks_used"]
